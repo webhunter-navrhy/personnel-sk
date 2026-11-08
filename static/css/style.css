@@ -311,3 +311,6 @@ a { text-underline-offset: 0.18em; }
   .tab-nastup { font-size: .85rem; }
   .tab-plat { white-space: normal; }
 }
+
+.tab-ciel { font-size: .85rem; color: #ffc9a3; }
+.tab-poznamka { font-size: .9rem; }
