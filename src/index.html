@@ -82,13 +82,10 @@
       <h2>Služby pre firmy</h2>
       <p>Hľadáte zamestnancov? Zabezpečíme personálny prenájom aj výber ľudí podľa Vašich požiadaviek.</p>
     </div>
-    <div class="firmy-dva">
-    <ul class="firmy-riadky" role="list">
+        <ul class="firmy-riadky" role="list">
       {% for f in data.obsah.firmy %}<li><h3>{{ f.n }}</h3><p>{{ f.p }}</p></li>{% endfor %}
     </ul>
-    <figure class="foto-karta firmy-foto">{{ img('firmy.jpg', 'Konzultantka personálnej agentúry pri notebooku', sizes='(min-width: 62rem) 26rem, 100vw') }}<a class="tlacitko" href="{{ url('pre-firmy/') }}">Dopyt pre firmy</a></figure>
-    </div>
-    <p class="kroky-dole"><a href="{{ url('pre-firmy/') }}">Viac pre firmy</a></p>
+    <p class="kroky-dole"><a class="tlacitko" href="{{ url('pre-firmy/') }}">Dopyt pre firmy</a> <a href="{{ url('pre-firmy/') }}">Viac pre firmy</a></p>
   </div>
 </section>
 
