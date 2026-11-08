@@ -314,3 +314,12 @@ a { text-underline-offset: 0.18em; }
 
 .tab-ciel { font-size: .85rem; color: #ffc9a3; }
 .tab-poznamka { font-size: .9rem; }
+
+.firmy-dva { display: grid; gap: var(--space-4); align-items: start; }
+@media (min-width: 62rem) { .firmy-dva { grid-template-columns: 1.4fr 1fr; gap: var(--space-5); } }
+.firmy-foto { display: grid; gap: var(--space-2); justify-items: start; }
+.firmy-foto img { aspect-ratio: 4 / 3; object-fit: cover; object-position: 75% 20%; background: #fff; border: 1px solid var(--line); }
+.hero::before { background: linear-gradient(90deg, rgba(251,248,244,.9) 0%, rgba(251,248,244,.8) 36%, rgba(251,248,244,0) 62%); }
+.hero-bg { filter: saturate(1.25) contrast(1.06); }
+.tab-ciel { font-size: .85rem; } .tab-poznamka { font-size: .9rem; }
+.listok li::before { border-radius: 4px; width: 3rem; content: "0" counter(k); font-family: var(--font-mono); }
