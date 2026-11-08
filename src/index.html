@@ -91,10 +91,15 @@
 
 <section class="sekce cta-sekcia">
   <div class="wrap cta">
-    <h2>Napíšte nám</h2>
-    <p>Na otázky k ponukám alebo registrácii odpovieme e-mailom na <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a> alebo Vám zavolajte na <a href="tel:{{ site.kontakt.telefon|replace(' ','') }}">{{ site.kontakt.telefon }}</a>.</p>
-    <p class="cta-adresa">PERSONÁLNE SLUŽBY s. r. o., {{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}<br>Povolenie na sprostredkovanie zamestnania za úhradu (ÚPSVaR) · Mestský súd Bratislava III, ORSR Sro/167934/B</p>
-    <a class="tlacitko" href="{{ url('kontakt/') }}">Kontakt a registrácia</a>
+    <h2>Napíšte nám alebo zavolajte</h2>
+    <p>Na otázky k ponukám, registrácii aj k službám pre firmy odpovieme čo najskôr.</p>
+    <ul class="cta-kontakt" role="list">
+      <li><a href="tel:{{ site.kontakt.telefon|replace(' ','') }}">{{ site.kontakt.telefon }}</a></li>
+      <li><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a></li>
+      <li>{{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}</li>
+    </ul>
+    <p class="cta-adresa">PERSONÁLNE SLUŽBY s. r. o. · Povolenie na sprostredkovanie zamestnania za úhradu (ÚPSVaR) · Mestský súd Bratislava III, ORSR Sro/167934/B</p>
+    <a class="tlacitko" href="{{ url('kontakt/') }}#registracia">Zaregistrovať sa online</a>
   </div>
 </section>
 {% endblock %}

@@ -28,7 +28,7 @@
   <div class="wrap">
     <a href="{{ url('') }}" class="logo">{% if site.logo %}<img src="{{ base }}{{ site.logo }}" alt="{{ site.nazev }}" height="40">{% else %}{{ site.nazev }}{% endif %}</a>
     <nav aria-label="Hlavné">
-      {% for n in site.nav %}<a{% if not loop.first %} class="nav-sek"{% endif %} href="{{ n.href if n.href.startswith(('#', 'http', 'tel:', 'mailto:')) else url(n.href) }}">{{ n.text }}</a> {% endfor %}
+      {% for n in site.nav %}<a class="nav-sek" href="{{ n.href if n.href.startswith(('#', 'http', 'tel:', 'mailto:')) else url(n.href) }}">{{ n.text }}</a> {% endfor %}
       <a class="nav-tel" href="tel:{{ site.kontakt.telefon|replace(' ','') }}" aria-label="Zavolať {{ site.kontakt.telefon }}"><span class="nav-tel-ico" aria-hidden="true">☎</span><span class="nav-tel-cislo">{{ site.kontakt.telefon }}</span></a>
       <a class="nav-cta" href="{{ url('kontakt/') }}#registracia">Registrácia</a>
       <details class="menu-det"><summary class="menu-tl">Menu</summary>
