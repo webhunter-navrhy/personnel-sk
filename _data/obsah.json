@@ -1,0 +1,52 @@
+{
+ "odvetvia": [
+  "poľnohospodárstvo a farmy",
+  "potravinárstvo",
+  "výroba a priemysel",
+  "strojárstvo a stavebný priemysel",
+  "reštaurácie a hotely",
+  "letné a sezónne práce, brigády",
+  "mäsiari",
+  "zdravotníctvo a opatrovateľstvo"
+ ],
+ "firmy": [
+  {
+   "n": "Dlhodobý personálny prenájom",
+   "p": "Pre obsadenie pozícií na dobu nad 1 rok."
+  },
+  {
+   "n": "Krátkodobý personálny prenájom",
+   "p": "Pre sezónu alebo projekt na dobu do 1 roka."
+  },
+  {
+   "n": "Prenájom zamestnancov just in time",
+   "p": "Keď potrebujete ľudí rýchlo a na presne daný čas."
+  },
+  {
+   "n": "Výber zamestnancov podľa zákazníka",
+   "p": "Kandidátov hľadáme a vyberáme podľa Vašich kritérií."
+  },
+  {
+   "n": "Personálne služby",
+   "p": "Ďalšie personálne a poradenské služby podľa dohody."
+  }
+ ],
+ "kroky": [
+  {
+   "n": "Vyberiete",
+   "p": "Prečítate si podmienky pri ponuke a vyberiete druh pobytu, ktorý Vám vyhovuje."
+  },
+  {
+   "n": "Zaregistrujete sa",
+   "p": "Vyplníte registračný formulár online."
+  },
+  {
+   "n": "Uhradíte poplatok",
+   "p": "Administratívny poplatok 30 € s DPH dokončí registráciu."
+  },
+  {
+   "n": "Vycestujete",
+   "p": "Začneme pracovať na Vašom umiestnení a dohodneme podpis zmluvy a termín odchodu."
+  }
+ ]
+}

@@ -1,0 +1,289 @@
+/* Neutrální základ. ŽÁDNÝ design: barvy, fonty a layout vymysli pro konkrétního klienta. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
+body { margin: 0; overflow-x: clip; }
+img, picture, video, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+ul[role="list"], ol[role="list"] { list-style: none; margin: 0; padding: 0; }
+
+:root {
+  /* barvy: přepiš podle brandu klienta (brief.json -> barvy.doporucene) */
+  --bg: #fbf8f4;
+  --text: #0e2238;
+  --muted: #46586b;
+  --accent: #d9560f;
+  --accent-text: #ffffff;
+  --line: #e3d9cd;
+
+  /* písmo: self-host do static/fonts + @font-face s font-display: swap; vždy otestuj háčky ěščřžýáíéůú */
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --ink: #0e2238; --blue: #0070ad; --orange: #f26e38; --orange-d: #b84a17; --paper: #ffffff; --sand: #f3ece3;
+  --font-head: var(--font-body);
+
+  /* typografická škála (320 až 1440 px) */
+  --step--1: clamp(0.83rem, 0.80rem + 0.14vw, 0.92rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.45rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.9rem);
+  --step-3: clamp(1.73rem, 1.5rem + 1.2vw, 2.6rem);
+  --step-4: clamp(2.07rem, 1.7rem + 1.9vw, 3.5rem);
+  --step-5: clamp(2.5rem, 1.9rem + 3vw, 5rem);
+
+  --space-1: 0.5rem;  --space-2: 1rem;  --space-3: 1.5rem;
+  --space-4: 2.5rem;  --space-5: 4rem;  --space-6: clamp(4rem, 3rem + 5vw, 8rem);
+  --wrap: 72rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: var(--step-0); line-height: 1.6; }
+h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 600; letter-spacing: -0.015em; }
+h1 { font-size: var(--step-5); } h2 { font-size: var(--step-3); } h3 { font-size: var(--step-1); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--wrap)); margin-inline: auto; }
+.sekce { padding-block: var(--space-6); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip { position: absolute; left: var(--space-2); top: -4rem; background: var(--bg); padding: var(--space-1) var(--space-2); z-index: 100; }
+.skip:focus { top: var(--space-2); }
+
+/* dotykové cíle: min. 44 px (QA hlásí < 40 px) */
+.tap, button, .tlacitko, input:not([type="checkbox"]):not([type="radio"]), select, textarea { min-height: 44px; }
+.tlacitko, button[type="submit"] { display: inline-flex; align-items: center; justify-content: center; padding: 0.6em 1.4em; background: var(--accent); color: var(--accent-text); border: 0; text-decoration: none; }
+.hlavicka nav a, .paticka a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 0.25rem; }
+
+/* formulář */
+.formular { display: grid; gap: var(--space-2); max-width: 36rem; }
+.formular label { display: grid; gap: 0.25rem; font-size: var(--step--1); }
+.formular input, .formular textarea, .formular select { padding: 0.6em 0.8em; border: 1px solid var(--line); background: transparent; width: 100%; }
+.formular .past { position: absolute; left: -9999px; }
+.formular-stav { font-size: var(--step--1); min-height: 1.5em; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ===== Personnel.sk ===== */
+/* kontrast: biely text na #d9560f má 4,2:1, preto tlačidlá používajú tmavšiu #c24a0a (5,0:1) */
+.tlacitko, button[type="submit"] { --accent: #c24a0a; border-radius: 6px; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s; }
+.tlacitko:hover, button[type="submit"]:hover { background: #a63e07; }
+.tl-svetle { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.tl-svetle:hover { background: var(--ink); color: #fff; }
+a { text-underline-offset: 0.18em; }
+
+.hlavicka { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+.hlavicka .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding-block: 0.4rem; flex-wrap: wrap; }
+.logo { display: inline-flex; align-items: center; min-height: 44px; }
+.logo img { width: auto; height: 40px; }
+.hlavicka nav { display: flex; align-items: center; gap: 0.25rem 0.9rem; flex-wrap: wrap; }
+.hlavicka nav a { text-decoration: none; font-weight: 500; font-size: var(--step--1); padding-inline: 0.3rem; }
+.hlavicka nav a:hover { color: var(--blue); }
+.hlavicka nav .nav-cta { background: var(--ink); color: #fff; border-radius: 6px; padding-inline: 1rem; }
+.hlavicka nav .nav-cta:hover { background: var(--blue); color: #fff; }
+
+/* hero: palubný lístok */
+.hero { padding-block: clamp(2rem, 5vw, 4.5rem); background: linear-gradient(180deg, var(--sand), var(--bg)); }
+.hero-mriezka { display: grid; gap: var(--space-4); align-items: center; }
+@media (min-width: 62rem) { .hero-mriezka { grid-template-columns: 1.15fr 1fr; gap: var(--space-5); } }
+.hero-nad { font-family: var(--font-mono); font-size: var(--step--1); text-transform: uppercase; letter-spacing: .08em; color: var(--orange-d); margin-bottom: var(--space-2); }
+.hero h1 { font-size: clamp(2.3rem, 1.6rem + 3.6vw, 4.6rem); font-weight: 700; line-height: 1.02; }
+.hero h1 span { display: block; color: var(--blue); }
+.hero-lead { margin-top: var(--space-3); font-size: var(--step-1); color: var(--muted); max-width: 36rem; }
+.hero-akcie { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+.hero-foto { margin: 0; position: relative; }
+.hero-foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; box-shadow: 0 24px 50px -24px rgba(14,34,56,.45); }
+.hero-foto::after { content: ""; position: absolute; inset: auto -0.6rem -0.6rem auto; width: 40%; height: 40%; border-right: 6px solid var(--orange); border-bottom: 6px solid var(--orange); border-radius: 0 0 14px 0; z-index: -1; }
+
+.sek-hlava { max-width: 40rem; margin-bottom: var(--space-4); }
+.sek-hlava p { margin-top: var(--space-1); color: var(--muted); }
+.sek-hlava h2, .dvojstlpec h2, .cta h2 { font-size: var(--step-4); font-weight: 700; }
+
+/* odletová tabuľa */
+.tabula-sekcia { background: var(--ink); color: #f3efe9; }
+.tabula-sekcia .sek-hlava p { color: #b9c6d4; }
+.tabula { background: #0a1a2c; border: 1px solid #25405c; border-radius: 12px; overflow: hidden; }
+.tab-hlavicka, .tab-odkaz { display: grid; grid-template-columns: 1.5fr 1.4fr 1fr 1fr; gap: var(--space-2); padding: 1rem 1.4rem; align-items: center; }
+.tab-hlavicka { font-family: var(--font-mono); font-size: var(--step--1); text-transform: uppercase; letter-spacing: .08em; color: #8fa5bb; border-bottom: 1px solid #25405c; }
+.tab-riadok + .tab-riadok { border-top: 1px solid #1c3550; }
+.tab-odkaz { text-decoration: none; min-height: 4.5rem; transition: background .2s; }
+.tab-odkaz:hover, .tab-odkaz:focus-visible { background: #12304d; }
+.tab-ciel { font-family: var(--font-mono); font-size: var(--step--1); color: #ffb380; line-height: 1.5; }
+.tab-poz { font-size: var(--step-1); font-weight: 600; line-height: 1.2; }
+.tab-plat { font-family: var(--font-mono); font-weight: 500; color: #fff; }
+.tab-nastup { font-family: var(--font-mono); font-size: var(--step--1); color: #9fe0b0; }
+.tab-stitok { display: none; }
+.tab-poznamka { margin-top: var(--space-2); font-size: var(--step--1); color: #b9c6d4; }
+.js-tabula .tab-riadok { opacity: 0; transform: translateY(10px); transition: opacity .5s var(--d, 0ms), transform .5s var(--d, 0ms); }
+.js-tabula .tab-riadok.je { opacity: 1; transform: none; }
+@media (max-width: 52rem) {
+  .tab-hlavicka { display: none; }
+  .tab-odkaz { grid-template-columns: 1fr 1fr; row-gap: .4rem; padding: 1.1rem; }
+  .tab-ciel, .tab-poz { grid-column: 1 / -1; }
+  .tab-stitok { display: inline; color: #8fa5bb; text-transform: uppercase; letter-spacing: .06em; margin-right: .3rem; }
+}
+
+/* postup: lístok s perforáciou */
+.listok { display: grid; gap: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; counter-reset: k; overflow: hidden; }
+.listok li { padding: var(--space-3); counter-increment: k; position: relative; border-top: 1px dashed #cdbfae; }
+.listok li:first-child { border-top: 0; }
+.listok li::before { content: counter(k); display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--orange-d); color: #fff; font-weight: 700; margin-bottom: var(--space-1); }
+.listok h3 { font-size: var(--step-1); margin-bottom: .3rem; }
+.listok p { color: var(--muted); }
+@media (min-width: 56rem) {
+  .listok { grid-template-columns: repeat(4, 1fr); }
+  .listok li { border-top: 0; border-left: 2px dashed #cdbfae; padding: var(--space-4) var(--space-3); }
+  .listok li:first-child { border-left: 0; }
+}
+.kroky-dole { margin-top: var(--space-3); font-weight: 600; }
+.kroky-dole a { color: var(--blue); }
+
+.odvetvia-sekcia { background: var(--sand); }
+.dvojstlpec { display: grid; gap: var(--space-4); align-items: start; }
+@media (min-width: 52rem) { .dvojstlpec { grid-template-columns: 1fr 1fr; gap: var(--space-5); } }
+.odv-lead { margin-top: var(--space-2); color: var(--muted); max-width: 32rem; }
+.odvetvia { display: flex; flex-wrap: wrap; gap: .6rem; }
+.odvetvia li, .stitky li { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: .5rem 1rem; font-weight: 500; font-size: var(--step--1); }
+.stitky { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: var(--space-3); }
+
+.firmy-zoznam { display: grid; gap: var(--space-2); }
+@media (min-width: 40rem) { .firmy-zoznam { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 62rem) { .firmy-zoznam { grid-template-columns: repeat(3, 1fr); } }
+.firmy-zoznam li { background: var(--paper); border: 1px solid var(--line); border-left: 5px solid var(--blue); border-radius: 8px; padding: var(--space-3); }
+.firmy-zoznam p { color: var(--muted); margin-top: .3rem; }
+.cta-sekcia { background: var(--blue); color: #fff; }
+.cta { display: grid; gap: var(--space-2); justify-items: start; }
+.cta p { max-width: 36rem; }
+.cta a:not(.tlacitko) { color: #fff; }
+.cta .tlacitko { background: #fff; color: var(--ink); }
+.cta .tlacitko:hover { background: var(--sand); }
+
+/* podstránky */
+.podhlavicka { background: var(--sand); padding-block: clamp(2rem, 4vw, 3.5rem); border-bottom: 1px solid var(--line); }
+.podhlavicka h1 { font-size: var(--step-5); font-weight: 700; }
+.podhlavicka p { margin-top: var(--space-1); color: var(--muted); font-size: var(--step-1); }
+.ponuka { scroll-margin-top: 5rem; }
+.ponuka-alt { background: var(--sand); }
+.ponuka-mriezka { display: grid; gap: var(--space-4); }
+@media (min-width: 56rem) { .ponuka-mriezka { grid-template-columns: 1fr 1.2fr; gap: var(--space-5); } .ponuka-hlava { position: sticky; top: 6rem; align-self: start; } }
+.ponuka-ciel { font-family: var(--font-mono); font-size: var(--step--1); color: var(--orange-d); text-transform: uppercase; letter-spacing: .06em; }
+.ponuka h2 { font-size: var(--step-4); font-weight: 700; margin-block: .4rem var(--space-2); }
+.ponuka-uvod { color: var(--muted); }
+.ponuka-fakty { margin: var(--space-3) 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.ponuka-fakty div { display: flex; justify-content: space-between; gap: var(--space-2); padding: .7rem 0; border-bottom: 1px solid var(--line); }
+.ponuka-fakty dt { color: var(--muted); }
+.ponuka-fakty dd { margin: 0; font-weight: 600; text-align: right; }
+.ponuka-telo h3 { font-size: var(--step-0); text-transform: uppercase; letter-spacing: .06em; color: var(--blue); margin: var(--space-3) 0 var(--space-1); }
+.ponuka-telo h3:first-child { margin-top: 0; }
+.plat-tab { width: 100%; border-collapse: collapse; }
+.plat-tab th, .plat-tab td { text-align: left; padding: .7rem .8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.plat-tab th { font-weight: 500; width: 50%; }
+.plat-tab td { font-weight: 600; }
+.vyhody { padding-left: 1.2rem; display: grid; gap: .45rem; margin: 0; }
+.vyhody li::marker { color: var(--orange-d); }
+
+.text-stlpec { max-width: 46rem; display: grid; gap: var(--space-2); }
+.text-stlpec h2 { font-size: var(--step-3); margin-top: var(--space-3); }
+.text-stlpec h2:first-child { margin-top: 0; }
+.text-stlpec h3 { font-size: var(--step-1); margin-top: var(--space-2); }
+.text-stlpec a, .kontakt-karta a { color: var(--blue); }
+.postup { padding-left: 1.4rem; display: grid; gap: .5rem; margin: 0; }
+.platba { background: var(--paper); border: 1px dashed #b8a894; border-radius: 10px; padding: var(--space-3); }
+.platba h3 { margin-top: 0; }
+.platba dl { display: grid; margin: var(--space-2) 0 0; }
+.platba dl div { display: grid; gap: .1rem; padding: .5rem 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 40rem) { .platba dl div { grid-template-columns: 12rem 1fr; } }
+.platba dt { color: var(--muted); font-size: var(--step--1); }
+.platba dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.mono { font-family: var(--font-mono); font-weight: 500; }
+.povolenie { font-size: var(--step--1); color: var(--muted); }
+.foto-karta { margin: 0; }
+.foto-karta img { border-radius: 14px; width: 100%; }
+.kontakt-karta address { font-style: normal; margin-block: var(--space-2); font-size: var(--step-1); }
+.kontakt-zoznam { display: grid; gap: .3rem; margin-bottom: var(--space-2); }
+.kontakt-zoznam span { display: inline-block; min-width: 4.5rem; color: var(--muted); }
+.registracia { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: var(--space-3); scroll-margin-top: 5rem; }
+.registracia h2 { font-size: var(--step-3); }
+.registracia > p { margin: .5rem 0 var(--space-3); color: var(--muted); }
+.reg-form { max-width: none; }
+.reg-form .dva { display: grid; gap: var(--space-2); }
+@media (min-width: 40rem) { .reg-form .dva { grid-template-columns: 1fr 1fr; } }
+.formular input, .formular textarea, .formular select { border-radius: 6px; background: #fff; border-color: #c9bdae; }
+.formular-stav { font-size: var(--step--1); color: var(--muted); }
+
+.paticka { background: var(--ink); color: #d5dde6; padding-block: var(--space-4); font-size: var(--step--1); }
+.paticka .wrap { display: grid; gap: var(--space-1); }
+.paticka a { color: #fff; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+.kroky-dole a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 40rem) { .hlavicka { position: relative; } .hero h1 { font-size: 2.3rem; } }
+@media (min-width: 62rem) { .hero h1 { font-size: clamp(2.8rem, 2rem + 2.6vw, 4rem); } }
+
+/* hero: palubný lístok z reálnych údajov ponuky */
+.pass { display: grid; background: var(--paper); border-radius: 16px; box-shadow: 0 26px 50px -26px rgba(14,34,56,.5); border: 1px solid var(--line); position: relative; overflow: hidden; }
+.pass-hlavne { padding: var(--space-4) var(--space-3); border-bottom: 2px dashed #cdbfae; border-left: 10px solid var(--orange); }
+.pass-odtrh { padding: var(--space-3); background: var(--sand); position: relative; }
+.pass-nad { font-family: var(--font-mono); font-size: var(--step--1); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.pass dl { margin: var(--space-2) 0 0; display: grid; gap: var(--space-2); }
+.pass dt { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.pass dd { margin: 0; font-size: var(--step-2); font-weight: 700; line-height: 1.15; }
+.pass dd.mono { font-size: var(--step-1); color: var(--blue); }
+.pass-velke { font-size: var(--step-3); font-weight: 700; color: var(--orange-d); line-height: 1.1; margin-top: .2rem; }
+.pass-male { margin-top: .4rem; color: var(--muted); font-size: var(--step--1); }
+.pass::before, .pass::after { content: ""; position: absolute; width: 26px; height: 26px; border-radius: 50%; background: var(--bg); left: -13px; z-index: 1; border: 1px solid var(--line); }
+@media (min-width: 62rem) {
+  .pass { grid-template-columns: 1.5fr 1fr; }
+  .pass-hlavne { border-bottom: 0; border-right: 2px dashed #cdbfae; }
+  .pass::before, .pass::after { left: auto; }
+  .pass::before { top: -13px; right: calc(40% - 13px); }
+  .pass::after { bottom: -13px; right: calc(40% - 13px); }
+  .pass-odtrh { display: flex; flex-direction: column; justify-content: center; }
+}
+@media (max-width: 61.99rem) { .pass::before { top: auto; bottom: calc(var(--odtrh, 9.5rem) - 13px); } .pass::after { display: none; } }
+
+/* hlavička: telefón */
+.nav-tel { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-mono); font-weight: 500; white-space: nowrap; }
+.nav-tel-ico { font-size: 1.1rem; color: var(--orange-d); }
+@media (max-width: 62rem) { .nav-tel-cislo { display: none; } .nav-tel { min-width: 44px; justify-content: center; } }
+@media (max-width: 52rem) { .hlavicka nav .nav-sek { display: none; } .hlavicka .wrap { flex-wrap: nowrap; } }
+
+/* služby pre firmy: riadky */
+.firmy-riadky { border-top: 2px solid var(--ink); }
+.firmy-riadky li { display: grid; gap: .2rem; padding: var(--space-2) 0; border-bottom: 1px solid var(--line); }
+.firmy-riadky h3 { font-size: var(--step-1); }
+.firmy-riadky p { color: var(--muted); }
+@media (min-width: 46rem) { .firmy-riadky li { grid-template-columns: 1fr 1.2fr; gap: var(--space-4); align-items: baseline; } }
+
+/* kroky: lístok s mono nadpisom */
+.listok h3 { font-family: var(--font-mono); font-weight: 500; text-transform: uppercase; font-size: var(--step-0); letter-spacing: .04em; }
+.listok { position: relative; }
+@media (min-width: 56rem) { .listok li::after { content: ""; position: absolute; top: -11px; left: -12px; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); } .listok li:first-child::after { display: none; } }
+
+.odv-pravy { display: grid; gap: var(--space-3); }
+.odv-pravy .foto-karta img { aspect-ratio: 16 / 10; object-fit: cover; }
+.pat-nav { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+
+/* hero na celú šírku s fotkou klienta */
+.hero { position: relative; isolation: isolate; overflow: hidden; background: #eef2f8; }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 60% 30%; z-index: -2; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(251,248,244,.96) 0%, rgba(251,248,244,.88) 42%, rgba(251,248,244,.35) 100%); }
+@media (max-width: 61.99rem) { .hero::before { background: linear-gradient(180deg, rgba(251,248,244,.94), rgba(251,248,244,.82)); } }
+.plat-r { display: block; }
+.cta-adresa { font-size: var(--step--1); opacity: .9; }
+.cta a:not(.tlacitko) { text-decoration: underline; }
+/* mobil: hlavička na jeden riadok */
+@media (max-width: 52rem) {
+  .hlavicka .wrap { flex-wrap: nowrap; gap: .5rem; }
+  .logo img { height: 34px; max-width: 9.5rem; object-fit: contain; }
+  .hlavicka nav { flex-wrap: nowrap; gap: .4rem; flex: none; }
+  .hlavicka nav .nav-tel { width: 44px; height: 44px; padding: 0; border-radius: 50%; background: var(--ink); justify-content: center; }
+  .hlavicka nav .nav-tel .nav-tel-ico { color: #fff; font-size: 1.2rem; }
+  .hlavicka nav .nav-cta { display: none; }
+  .menu-det { display: block; }
+}
+.menu-det { display: none; position: static; }
+.menu-tl { display: inline-flex; align-items: center; min-height: 44px; padding-inline: .9rem; border-radius: 6px; box-shadow: inset 0 0 0 2px var(--ink); font-weight: 600; font-size: var(--step--1); cursor: pointer; list-style: none; }
+.menu-tl::-webkit-details-marker { display: none; }
+.menu-panel { position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); padding: .5rem var(--gutter) 1rem; display: grid; box-shadow: 0 18px 30px -20px rgba(14,34,56,.4); }
+.hlavicka nav .menu-panel a { min-height: 48px; font-size: var(--step-0); border-bottom: 1px solid var(--line); }
+.hlavicka nav .menu-panel .menu-reg { background: var(--ink); color: #fff; border-radius: 6px; justify-content: center; margin-top: .6rem; border: 0; }

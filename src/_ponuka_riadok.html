@@ -1,0 +1,8 @@
+<li class="tab-riadok" data-riadok>
+  <a class="tab-odkaz" href="{{ url('ponuka-prace/') }}#{{ p.id }}">
+    <span class="tab-ciel">{{ p.ciel }}</span>
+    <span class="tab-poz">{{ p.pozicia }}</span>
+    <span class="tab-plat">{% if p.plat_tab is defined %}{% for r in p.plat_tab %}<span class="plat-r">{{ r }}</span>{% endfor %}{% else %}{{ p.plat }}{% endif %}</span>
+    <span class="tab-nastup"><span class="tab-stitok">Nástup</span> {{ p.nastup }}</span>
+  </a>
+</li>

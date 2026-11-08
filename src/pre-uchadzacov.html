@@ -1,0 +1,52 @@
+{% extends "_base.html" %}
+{% set titulek = 'Informácie pre uchádzačov – registrácia a poplatky | Personnel.sk' %}
+{% set popis = 'Ako prebieha registrácia, aké poplatky sa v agentúre hradia a čo zahŕňajú asistenčné služby. Práca je sprostredkovaná zdarma.' %}
+{% set cesta = 'pre-uchadzacov/' %}
+{% block obsah %}
+<section class="podhlavicka">
+  <div class="wrap">
+    <h1>Informácie pre uchádzačov</h1>
+    <p>Kompletné informácie o poplatkoch a odpovede na otázky k úhrade.</p>
+  </div>
+</section>
+<section class="sekce text-sekcia">
+  <div class="wrap text-stlpec">
+    <h2>1. Registrácia v agentúre</h2>
+    <p>Pri registrácii platíte administratívny poplatok <strong>30 € s DPH</strong> za administratívu spojenú so spracovaním prihlášky a poradenské služby. Poplatok je nevratný a vyberá sa na základe živnostenského oprávnenia spoločnosti PERSONÁLNE SLUŽBY s. r. o.</p>
+    <p>Zahŕňa prvotné informácie o činnosti agentúry, personálne poradenstvo, formuláre, vstupné rozhovory, prepísanie životopisu do medzinárodne použiteľného formulára a preklad, digitálne spracovanie, preklad a kontrolu prihlasovacích formulárov a zadanie podkladov do systému partnerských agentúr. Nie je to poplatok za sprostredkovanie zamestnania a so sprostredkovaním práce nesúvisí.</p>
+    <h3>Postup pri registrácii</h3>
+    <ol class="postup">
+      <li>Preštudujte podmienky programu a registrácie pri každej krajine a vyberte si druh pobytu, ktorý Vám vyhovuje.</li>
+      <li>Zaregistrujte sa online vo <a href="{{ url('kontakt/') }}#registracia">formulári</a>.</li>
+      <li>Pre úplnú registráciu uhraďte administratívny poplatok 30 €.</li>
+    </ol>
+    <div class="platba">
+      <h3>Platba vkladom alebo prevodom</h3>
+      <dl>
+        <div><dt>Príjemca</dt><dd>PERSONÁLNE SLUŽBY s. r. o.</dd></div>
+        <div><dt>Banka</dt><dd>Slovenská sporiteľňa</dd></div>
+        <div><dt>IBAN</dt><dd class="mono">SK67 0900 0000 0052 0333 0512</dd></div>
+        <div><dt>BIC/SWIFT</dt><dd class="mono">GIBASKBX</dd></div>
+        <div><dt>Variabilný symbol</dt><dd>dátum narodenia bez bodiek</dd></div>
+        <div><dt>Popis platby</dt><dd>Vaše meno a priezvisko</dd></div>
+      </dl>
+    </div>
+    <p>Po obdržaní registračnej prihlášky a uhradení poplatku začneme pracovať na Vašom umiestnení, prípadne ihneď dohodneme termín podpisu pracovných zmlúv a vycestovanie.</p>
+
+    <h2>2. Poplatky agentúre</h2>
+    <p>Poplatok za sprostredkovanie práce neplatíte, práca je sprostredkovaná zadarmo. Hradíte poplatok za asistenčné a poradenské služby, alebo programové poplatky pri študijných a jazykových pobytoch. Poskytneme Vám poradenstvo k formalitám, oznamovacím a registračným povinnostiam a informácie, čo treba vybaviť pred vycestovaním aj po návrate.</p>
+    <h3>Asistenčné služby zahŕňajú</h3>
+    <ul class="vyhody">
+      <li>asistenciu pri vybavovaní dopravy do zahraničia a cestovného itinerára,</li>
+      <li>zabezpečenie odvozu z letiska alebo autobusovej stanice,</li>
+      <li>informácie o ubytovacích možnostiach v zahraničí,</li>
+      <li>inštrukcie, čo si vziať so sebou,</li>
+      <li>pomoc v krízových situáciách,</li>
+      <li>informácie o životných a pracovných podmienkach a úradných povinnostiach v zahraničí,</li>
+      <li>kontakty na koordinátorov a kontaktné osoby.</li>
+    </ul>
+    <p>Poplatok za asistenčné služby a poradenstvo je <strong>od 100 do 250 €</strong>. Presnú výšku upresníme pri konkrétnej ponuke. Sme otvorení dialógu a vždy hľadáme riešenie, ktoré uchádzačovi vyhovuje.</p>
+    <p class="povolenie">Spoločnosť je držiteľom povolenia na sprostredkovanie zamestnania za úhradu (ÚPSVaR).</p>
+  </div>
+</section>
+{% endblock %}

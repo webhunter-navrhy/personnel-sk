@@ -1,0 +1,47 @@
+{% extends "_base.html" %}
+{% set titulek = 'Kontakt a online registrácia | Personnel.sk Bratislava' %}
+{% set popis = 'Kontakt na personálnu agentúru PERSONÁLNE SLUŽBY s. r. o., Karpatské námestie 10A, Bratislava, a online registrácia uchádzačov o prácu v zahraničí.' %}
+{% set cesta = 'kontakt/' %}
+{% block obsah %}
+<section class="podhlavicka">
+  <div class="wrap">
+    <h1>Kontakt</h1>
+    <p>Neváhajte nás kontaktovať. Tešíme sa na spoluprácu.</p>
+  </div>
+</section>
+<section class="sekce">
+  <div class="wrap dvojstlpec">
+    <div class="kontakt-karta">
+      <h2>PERSONÁLNE SLUŽBY s. r. o.</h2>
+      <address>
+        Karpatské námestie 10A<br>831 06 Bratislava<br>Slovak Republic
+      </address>
+      <ul class="kontakt-zoznam" role="list">
+        <li><span>Mobil</span> <a href="tel:{{ site.kontakt.telefon|replace(' ','') }}">{{ site.kontakt.telefon }}</a></li>
+        <li><span>E-mail</span> <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a></li>
+      </ul>
+      <p class="povolenie">Spoločnosť je držiteľom povolenia na sprostredkovanie zamestnania za úhradu (ÚPSVaR). Mestský súd Bratislava III, ORSR Sro/167934/B.</p>
+      <p class="povolenie">Na osobné stretnutie je potrebné vopred dohodnúť termín.</p>
+    </div>
+    <div class="registracia" id="registracia">
+      <h2>Registrácia online</h2>
+      <p>Vyplňte základné údaje a my sa Vám ozveme s ďalším postupom. Doklady a životopis si vyžiadame až po registrácii.</p>
+      <form class="formular reg-form" method="post" data-endpoint="" data-demo="1">
+        <div class="dva"><label>Meno <input name="meno" autocomplete="given-name" required></label>
+        <label>Priezvisko <input name="priezvisko" autocomplete="family-name" required></label></div>
+        <div class="dva"><label>E-mail <input name="email" type="email" autocomplete="email" required></label>
+        <label>Telefónne číslo <input name="telefon" type="tel" autocomplete="tel" required></label></div>
+        <label>Záujem o pracovnú pozíciu
+          <select name="pozicia"><option>Animátor</option><option>Hotely a reštaurácie</option><option>Výletné lode</option><option>Iná pozícia</option></select></label>
+        <label>Krajina, o ktorú máte záujem <input name="krajina" placeholder="napr. Grécko"></label>
+        <label>Najskorší možný nástup <input name="nastup" placeholder="napr. máj"></label>
+        <label>Správa <textarea name="zprava" rows="4"></textarea></label>
+        <div class="past" aria-hidden="true"><label>Nevyplňovať <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_subject" value="Registrácia z webu personnel.sk">
+        <button type="submit">Odoslať registráciu</button>
+        <p class="formular-stav" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

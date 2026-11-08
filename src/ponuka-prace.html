@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+{% set titulek = 'Ponuka práce v zahraničí – animátor, hotely, výletné lode | Personnel.sk' %}
+{% set popis = 'Aktuálne ponuky práce v zahraničí: animátor, hotely a reštaurácie v Grécku a na Cypre, práca na výletných lodiach. Ubytovanie a strava zdarma, nástup každý týždeň.' %}
+{% set cesta = 'ponuka-prace/' %}
+{% block obsah %}
+<section class="podhlavicka">
+  <div class="wrap">
+    <h1>Ponuka práce</h1>
+    <p>Aktuálne ponuky, nástup každý týždeň alebo priebežne počas roka.</p>
+  </div>
+</section>
+{% for p in data.ponuky %}
+<section class="sekce ponuka {{ 'ponuka-alt' if loop.index is even }}" id="{{ p.id }}">
+  <div class="wrap ponuka-mriezka">
+    <div class="ponuka-hlava">
+      <p class="ponuka-ciel">{{ p.ciel }}</p>
+      <h2>{{ p.pozicia }}</h2>
+      <p class="ponuka-uvod">{{ p.uvod }}</p>
+      <dl class="ponuka-fakty">
+        <div><dt>Plat</dt><dd>{{ p.plat }}</dd></div>
+        <div><dt>Nástup</dt><dd>{{ p.nastup }}</dd></div>
+        <div><dt>Bonus</dt><dd>{{ p.podm }}</dd></div>
+      </dl>
+      <a class="tlacitko" href="{{ url('kontakt/') }}#registracia">Registrácia online</a>
+    </div>
+    <div class="ponuka-telo">
+      <h3>Pozície</h3>
+      <ul class="stitky" role="list">{% for x in p.pozicie %}<li>{{ x }}</li>{% endfor %}</ul>
+      <h3>Mzda</h3>
+      <table class="plat-tab"><tbody>{% for r in p.plat_riadky %}<tr><th scope="row">{{ r[0] }}</th><td>{{ r[1] }}</td></tr>{% endfor %}</tbody></table>
+      <h3>Požiadavky</h3>
+      <p>{{ p.poziadavky }}</p>
+      <h3>Výhody</h3>
+      <ul class="vyhody">{% for v in p.vyhody %}<li>{{ v }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

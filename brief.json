@@ -1,0 +1,223 @@
+{
+ "slug": "personnel-sk",
+ "zdroj_url": "https://personnel.sk",
+ "firma": "Travel Servis s. r. o. (personnel.sk)",
+ "obor": [
+  "právo a poradenství",
+  "e-shop / obchod"
+ ],
+ "ico": "",
+ "ares": null,
+ "kontakty": {
+  "emaily": [
+   "info@personnel.sk"
+  ],
+  "telefony": [
+   "948 913 914"
+  ],
+  "adresa": "",
+  "socialni_site": []
+ },
+ "logo": {
+  "soubor": "podklady/logo.png",
+  "zdroj": "https://personnel.sk/wp-content/uploads/2019/01/logo_personnel.png",
+  "rozmery": [
+   400,
+   68
+  ]
+ },
+ "barvy": {
+  "css_promenne": {},
+  "z_css": [
+   "#f26e38",
+   "#0070ad",
+   "#52bfd7",
+   "#f7e700",
+   "#398f14",
+   "#420a0e"
+  ],
+  "z_loga": [
+   "#f96a00",
+   "#bbc8e8",
+   "#0135ad"
+  ],
+  "theme_color": null,
+  "doporucene": [
+   "#f96a00",
+   "#bbc8e8",
+   "#f26e38",
+   "#0070ad"
+  ]
+ },
+ "fotky": [
+  {
+   "soubor": "podklady/foto/foto-01.jpg",
+   "url": "https://personnel.sk/wp-content/uploads/2019/01/slide1.jpg",
+   "sirka": 1920,
+   "vyska": 930,
+   "alt": ""
+  },
+  {
+   "soubor": "podklady/foto/foto-02.jpg",
+   "url": "https://personnel.sk/wp-content/uploads/2019/01/slide-top.jpg",
+   "sirka": 975,
+   "vyska": 516,
+   "alt": ""
+  }
+ ],
+ "fakta": [
+  {
+   "typ": "h1",
+   "text": "Práca v zahraničí, Letné brigády v zahraničí, Brigáda v zahraničí",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "Skúsenosti",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "Odbornosť",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "Rýchlosť",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "Profesionalita",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "Výber kľúčových zamestnancov",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "PERSONÁLNA AGENTÚRA",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "SLUŽBY PRE FIRMY",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "h2",
+   "text": "KONTAKT",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Úspešnú firmu tvoria schopní ľudia. Expert na prácu v zahraničí Zaregistrovať sa online",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Profitujte z našich viac ako 10 ročných skúseností v tomto biznise.",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "U nás máte istotu že sa Vám bude venovať na slovo vzatý odborník.",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Promptné vybavenie požiadaviek našich klientov je pre nás samozrejmosťou.",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Ak hľadáte profesionálny prístup, ste na správnej adrese.",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Recruitment alebo teda vyhľadávanie a výber kľúčových zamestnancov nie je vôbec jednoduchá vec. Žiada si odbornosť a skĺbenie znalostí viacerých disciplín ako sú obchod, personalistika, psychológia, manažment a ekonomika ako aj poznanie pracovného trhu a vhľad do rôznych odvetví a ich interných praktík a princípov fungovania.",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "U nás sa tieto nevyhnutné odbornosti prekrývajú ešte aj s praktickými manažérskymi a podnikateľskými skúsenosťami našich konzultantov čo dodáva neoceniteľnú pridanú hodnotu pochopenia dôležitosti určitých charakteristík a rysov zamestnancov pre tú ktorú pracovnú pozíciu.",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "PERSONÁLNE SLUŽBY s. r. o. je dynamicky sa rozvíjajúca personálno-poradenská spoločnosť, ktorá sa zaoberá sprostredkovaním práce a personálnym lízingom pre žiadateľov z krajín Východnej Európy do krajín celej EU.",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "PERSONÁLNE SLUŽBY s. r. o. Karpatské námestie 10A 831 06 Bratislava Slovak Republic",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Mestský súd Bratislava III ORSR, pod číslom Sro/167934/B",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Mobil: 0948 913 914 URL: www.personnel.sk E-mail: info@personnel.sk",
+   "zdroj": "https://personnel.sk/"
+  }
+ ],
+ "chybi": [
+  "IČO",
+  "fotky firmy/provozu/produktů (nalezeno 2, potřeba aspoň 6)",
+  "adresa / provozovna",
+  "potvrzení služeb a ceníku (nic nevymýšlet)"
+ ],
+ "popis_webu": "Práca v zahraničí, ponuka práce v zahraničí, letné brigády v zahraničí, brigáda v zahraničí, brigády v zahraničí, práca a brigády v zahraničí.",
+ "overene_fakta": [
+  {
+   "text": "Animátor: 750–1350 EUR netto + strava a ubytovanie zdarma (750 bez skúseností, 770–800 jedna sezóna, 800–900 dve a viac, 1050–1350 šéf animátor); nástup každý týždeň",
+   "zdroj": "https://personnel.sk/ponuka-prace-praca-v-zahranici/"
+  },
+  {
+   "text": "Hotely a reštaurácie: plat 1000–3000 EUR brutto, ubytovanie a strava zdarma, termín nástupu každý týždeň",
+   "zdroj": "https://personnel.sk/ponuka-prace-praca-v-zahranici/"
+  },
+  {
+   "text": "Výletné lode: riečne 1000–3500 EUR, námorné 1000–2500 EUR, nástup priebežne počas celého roka",
+   "zdroj": "https://personnel.sk/ponuka-prace-praca-v-zahranici/"
+  },
+  {
+   "text": "Administratívny poplatok 30 EUR s DPH pri registrácii, nevratný; poplatok za asistenčné služby od 100 do 250 EUR; práca sprostredkovaná zdarma",
+   "zdroj": "https://personnel.sk/info-praca-v-zahranici/"
+  },
+  {
+   "text": "Služby pre firmy: dlhodobý prenájom (nad 1 rok), krátkodobý (do 1 roka), just in time, výber zamestnancov podľa zákazníka",
+   "zdroj": "https://personnel.sk/"
+  },
+  {
+   "text": "Kontakt: Karpatské námestie 10A, 831 06 Bratislava, mobil 0948 913 914, info@personnel.sk; povolenie na sprostredkovanie zamestnania za úhradu (UPSVAR); ORSR Sro/167934/B",
+   "zdroj": "https://personnel.sk/kontakt/"
+  },
+  {
+   "text": "Odvetvia: poľnohospodárstvo, potravinárstvo, výroba, strojárstvo a stavebníctvo, reštaurácie a hotely, sezónne práce, mäsiari, zdravotníctvo a opatrovateľstvo",
+   "zdroj": "https://personnel.sk/o-nas-praca-v-zahranici/"
+  },
+  {
+   "text": "Animátor – destinácie: Grécko, Cyprus, Taliansko, Španielsko, Kanárske ostrovy, Malta",
+   "zdroj": "https://personnel.sk/ponuka-prace-praca-v-zahranici/"
+  },
+  {
+   "text": "Hotely a reštaurácie – destinácie: Rakúsko, Nemecko, Grécko, Cyprus, Taliansko, Španielsko, Kanárske ostrovy, Malta",
+   "zdroj": "https://personnel.sk/ponuka-prace-praca-v-zahranici/"
+  },
+  {
+   "text": "Výletné lode plaviace sa v Európe, Stredomorí, Karibiku a iných destináciach; riečne lode výlučne po riekach v Európe",
+   "zdroj": "https://personnel.sk/ponuka-prace-praca-v-zahranici/"
+  },
+  {
+   "text": "PERSONÁLNE SLUŽBY s. r. o. (web personnel.sk, Karpatské námestie 10A, Bratislava) – obchodné meno prevádzkovateľa; 'Travel Servis s. r. o.' z recipients.csv sa na webe nevyskytuje",
+   "zdroj": "https://personnel.sk/kontakt/"
+  }
+ ]
+}

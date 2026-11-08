@@ -1,0 +1,125 @@
+[
+ {
+  "id": "animator",
+  "ciel": "Grécko · Cyprus · Taliansko · Španielsko · Malta",
+  "kratko": "Animátor",
+  "pozicia": "Animátor / animátorka v hotelovom rezorte",
+  "plat": "750 – 1 350 € netto",
+  "nastup": "každý týždeň",
+  "podm": "Ubytovanie a strava zdarma",
+  "uvod": "Zdokonaľte sa v cudzích jazykoch, spoznajte nových ľudí a užite si leto v hoteli pri mori. Animátori majú ubytovanie aj stravu zdarma, takže veľkú časť príjmu ušetria.",
+  "pozicie": [
+   "športový animátor",
+   "detský animátor",
+   "animátor all-rounder",
+   "animátor – tanečník",
+   "animátor – spevák",
+   "šéf animátor"
+  ],
+  "plat_riadky": [
+   [
+    "Animátor bez skúseností",
+    "750 € netto"
+   ],
+   [
+    "Skúsený animátor (jedna sezóna)",
+    "770 – 800 € netto"
+   ],
+   [
+    "Skúsený animátor (dve a viac sezón)",
+    "800 – 900 € netto"
+   ],
+   [
+    "Šéf animátor",
+    "1 050 – 1 350 € netto"
+   ]
+  ],
+  "poziadavky": "Mierne pokročilý španielsky, anglický, nemecký, ruský alebo švédsky jazyk. Skúseným animátorom a uchádzačom, ktorí sú k dispozícii 6 a viac mesiacov, stačí jeden cudzí jazyk.",
+  "vyhody": [
+   "práca približne 8 – 10 hodín denne, 5 – 6 dní v týždni, 1 – 2 dni voľna",
+   "bezplatné ubytovanie v hoteli alebo v apartmánoch",
+   "bezplatná strava v hoteli (plná penzia, pitná voda a/alebo nealko nápoje)",
+   "zdravotné a sociálne poistenie",
+   "prax nie je potrebná, zaškolenie na mieste (počas školenia ste platení)",
+   "bonus 100 € na letenku pre skúsených animátorov",
+   "asistencia počas celého pobytu v zahraničí"
+  ]
+ },
+ {
+  "id": "hotely",
+  "ciel": "Rakúsko · Nemecko · Grécko · Cyprus · Taliansko · Španielsko",
+  "kratko": "Hotely a reštaurácie",
+  "pozicia": "Hotely a reštaurácie",
+  "plat": "1 000 – 3 000 € brutto",
+  "nastup": "každý týždeň",
+  "podm": "Ubytovanie a strava zdarma",
+  "uvod": "Práca v hotelových rezortoch, reštauráciách a baroch na ostrovoch alebo na pobreží. Ponuka je vhodná aj s nástupom okamžite a pre študentov na letné prázdniny.",
+  "pozicie": [
+   "čašník / čašníčka",
+   "barman / barmanka",
+   "chyžná",
+   "recepčný / recepčná",
+   "kuchár / kuchárka",
+   "pomoc v kuchyni",
+   "animátor"
+  ],
+  "plat_riadky": [
+   [
+    "Ponúkaný plat",
+    "1 000 – 3 000 € brutto"
+   ],
+   [
+    "Dĺžka zmluvy",
+    "2 – 6 mesiacov, celý rok alebo dlhšie"
+   ]
+  ],
+  "poziadavky": "Jazykové a ďalšie požiadavky závisia od pozície a upresníme ich pri konkrétnej ponuke.",
+  "vyhody": [
+   "ubytovanie zadarmo a strava zadarmo (2 – 3 × denne) priamo v zmluve so zamestnávateľom",
+   "pracovná zmluva sa podpisuje pred odchodom",
+   "garancia pracovného miesta po celú dobu zmluvy",
+   "možnosť dlhodobejšieho zamestnania aj umiestnenia študentov počas leta",
+   "podpora agentúry 24 hodín denne",
+   "Grécko: Kréta, Rhodos, Kos, Mykonos, Paros, Kefalónia a ďalšie ostrovy; Cyprus: Ayia Napa, Larnaka, Limassol, Paphos"
+  ]
+ },
+ {
+  "id": "lode",
+  "ciel": "Európa · Stredomorie · Karibik",
+  "kratko": "Výletné lode",
+  "pozicia": "Práca na výletných lodiach",
+  "plat": "1 000 – 3 500 €",
+  "nastup": "priebežne počas roka",
+  "podm": "Ubytovanie a strava zdarma",
+  "uvod": "Pozície v hoteliérstve a gastronómii na riečnych, námorných a zaoceánskych výletných lodiach. Zárobok idete aj s cestovaním a poznávaním nových krajín.",
+  "pozicie": [
+   "cabin stewardess",
+   "chef de partie",
+   "sous chef",
+   "hotel manager",
+   "barkeeper / junior barkeeper",
+   "steward (waiter) v reštaurácii"
+  ],
+  "plat_riadky": [
+   [
+    "Riečne lode",
+    "1 000 – 3 500 € podľa pozície, kontrakt 1 – 6 mesiacov"
+   ],
+   [
+    "Námorné lode",
+    "1 000 – 2 500 € podľa pozície, kontrakt 6 mesiacov"
+   ]
+  ],
+  "poziadavky": "Základná znalosť anglického alebo nemeckého jazyka, odporúčaný vek 18 – 40 rokov (pri námorných lodiach 20 – 40), skúsenosti na danej pozícii sú výhodou, trestná bezúhonnosť, dobrý zdravotný stav.",
+  "vyhody": [
+   "ubytovanie a strava zadarmo",
+   "zdravotné a sociálne poistenie hradené zamestnávateľom",
+   "cestovný lístok do miesta nalodenia zabezpečuje zamestnávateľ",
+   "platená dovolenka (pri 6-mesačnom kontrakte 3,5 týždňa na riečnych lodiach, 7 dní v mesiaci na námorných)"
+  ],
+  "plat_tab": [
+   "Riečne 1 000 – 3 500 €",
+   "Námorné 1 000 – 2 500 €"
+  ]
+ }
+]

@@ -1,0 +1,51 @@
+{
+ "slug": "personnel-sk",
+ "nazev": "Personnel.sk – PERSONÁLNE SLUŽBY s. r. o.",
+ "url": "https://webhunter-navrhy.github.io/personnel-sk/",
+ "base": "/personnel-sk/",
+ "lang": "sk",
+ "popis": "Personálna agentúra z Bratislavy: sprostredkovanie práce v zahraničí, brigády a personálny lízing pre firmy. Registrácia online, nástup každý týždeň.",
+ "navrh": true,
+ "domena": "",
+ "og_image": "hero.jpg",
+ "logo": "logo.png",
+ "theme_color": "#fbf8f4",
+ "typ": "LocalBusiness",
+ "ico": "",
+ "kontakt": {
+  "email": "info@personnel.sk",
+  "telefon": "0948 913 914",
+  "adresa": {
+   "ulice": "Karpatské námestie 10A",
+   "psc": "831 06",
+   "mesto": "Bratislava",
+   "zeme": "SK"
+  }
+ },
+ "oteviraci_doba": [],
+ "sameas": [],
+ "cenove_rozpeti": "",
+ "formular": {
+  "endpoint": "",
+  "demo": true,
+  "predmet": "Dopyt z webu personnel.sk"
+ },
+ "nav": [
+  {
+   "text": "Ponuka práce",
+   "href": "ponuka-prace/"
+  },
+  {
+   "text": "Pre uchádzačov",
+   "href": "pre-uchadzacov/"
+  },
+  {
+   "text": "Pre firmy",
+   "href": "pre-firmy/"
+  },
+  {
+   "text": "Kontakt",
+   "href": "kontakt/"
+  }
+ ]
+}

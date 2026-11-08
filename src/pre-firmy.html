@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% set titulek = 'Personálny prenájom a výber zamestnancov pre firmy | Personnel.sk' %}
+{% set popis = 'Dlhodobý a krátkodobý personálny prenájom, prenájom zamestnancov just in time a výber zamestnancov podľa Vašich požiadaviek. Personálna agentúra Bratislava.' %}
+{% set cesta = 'pre-firmy/' %}
+{% block obsah %}
+<section class="podhlavicka">
+  <div class="wrap">
+    <h1>Služby pre firmy</h1>
+    <p>Úspešnú firmu tvoria schopní ľudia. Pomôžeme Vám ich nájsť.</p>
+  </div>
+</section>
+<section class="sekce">
+  <div class="wrap dvojstlpec">
+    <div>
+      <h2>Výber kľúčových zamestnancov</h2>
+      <p>Vyhľadávanie a výber kľúčových zamestnancov nie je jednoduchá vec. Žiada si odbornosť a skĺbenie znalostí z oblasti obchodu, personalistiky, psychológie, manažmentu a ekonomiky, ako aj poznanie pracovného trhu a vhľad do rôznych odvetví.</p>
+      <p>Naše odbornosti sa prekrývajú s praktickými manažérskymi a podnikateľskými skúsenosťami konzultantov, vďaka čomu rozumieme, aké vlastnosti sú dôležité pre danú pracovnú pozíciu.</p>
+    </div>
+    <figure class="foto-karta">{{ img('tym2.jpg', 'Konzultantka pri notebooku', sizes='(min-width: 62rem) 30rem, 100vw') }}</figure>
+  </div>
+</section>
+<section class="sekce firmy-sekcia">
+  <div class="wrap">
+    <div class="sek-hlava"><h2>Čo pre Vás zabezpečíme</h2></div>
+    <ul class="firmy-riadky" role="list">
+      {% for f in data.obsah.firmy %}<li><h3>{{ f.n }}</h3><p>{{ f.p }}</p></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="sekce cta-sekcia">
+  <div class="wrap cta">
+    <h2>Povedzte nám, koho hľadáte</h2>
+    <p>Napíšte nám pozíciu, počet ľudí a termín na <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a> a ozveme sa s návrhom.</p>
+    <a class="tlacitko" href="{{ url('kontakt/') }}">Kontakt</a>
+  </div>
+</section>
+{% endblock %}

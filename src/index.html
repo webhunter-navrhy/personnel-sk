@@ -1,0 +1,100 @@
+{% extends "_base.html" %}
+{% set titulek = 'Práca v zahraničí a personálne služby – Personnel.sk Bratislava' %}
+{% set popis = 'Personálna agentúra z Bratislavy: práca v hoteloch, na výletných lodiach a ako animátor v zahraničí, personálny prenájom pre firmy. Nástup každý týždeň.' %}
+{% set cesta = '' %}
+{% block obsah %}
+<section class="hero">
+  {{ img('hero.jpg', '', cls='hero-bg', sizes='100vw', eager=True) }}
+  <div class="wrap hero-mriezka">
+    <div class="hero-text">
+      <p class="hero-nad">Personálna agentúra · Bratislava</p>
+      <h1>Práca v zahraničí. <span>Nástup každý týždeň.</span></h1>
+      <p class="hero-lead">PERSONÁLNE SLUŽBY s. r. o. sprostredkúva prácu pre uchádzačov zo Slovenska a Východnej Európy do krajín celej EÚ a poskytuje firmám personálny prenájom.</p>
+      <div class="hero-akcie">
+        <a class="tlacitko" href="{{ url('kontakt/') }}#registracia">Zaregistrovať sa online</a>
+        <a class="tlacitko tl-svetle" href="{{ url('ponuka-prace/') }}">Pozrieť ponuky práce</a>
+      </div>
+    </div>
+    <div class="pass" aria-label="Ukážka ponuky: animátor v hotelovom rezorte">
+      <div class="pass-hlavne">
+        <p class="pass-nad">Najbližší odlet</p>
+        <dl>
+          <div><dt>Kam</dt><dd>Grécko, Cyprus, Taliansko, Španielsko, Malta</dd></div>
+          <div><dt>Pozícia</dt><dd>Animátor / animátorka</dd></div>
+          <div><dt>Plat</dt><dd class="mono">750 – 1 350 € netto</dd></div>
+        </dl>
+      </div>
+      <div class="pass-odtrh">
+        <p class="pass-nad">Nástup</p>
+        <p class="pass-velke">každý týždeň</p>
+        <p class="pass-male">Ubytovanie a strava zdarma</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekce tabula-sekcia" id="ponuky">
+  <div class="wrap">
+    <div class="sek-hlava">
+      <h2>Aktuálne ponuky</h2>
+      <p>Nástup každý týždeň alebo priebežne počas roka. Podrobnosti nájdete pri každej ponuke.</p>
+    </div>
+    <div class="tabula" role="region" aria-label="Aktuálne ponuky práce">
+      <div class="tab-hlavicka" aria-hidden="true"><span>Kam</span><span>Pozícia</span><span>Plat</span><span>Nástup</span></div>
+      <ul role="list">
+        {% for p in data.ponuky %}{% include "_ponuka_riadok.html" %}{% endfor %}
+      </ul>
+    </div>
+    <p class="tab-poznamka">Mzdy sú uvedené podľa ponúk zamestnávateľov, pri každej ponuke je uvedené, či ide o netto alebo brutto.</p>
+  </div>
+</section>
+
+<section class="sekce kroky-sekcia" id="postup">
+  <div class="wrap">
+    <div class="sek-hlava">
+      <h2>Od registrácie po odchod</h2>
+      <p>Postup je rovnaký pri každej krajine a každej pozícii.</p>
+    </div>
+    <ol class="listok" role="list">
+      {% for k in data.obsah.kroky %}<li><h3>{{ k.n }}</h3><p>{{ k.p }}</p></li>{% endfor %}
+    </ol>
+    <p class="kroky-dole"><a href="{{ url('pre-uchadzacov/') }}">Všetky informácie o poplatkoch a registrácii</a></p>
+  </div>
+</section>
+
+<section class="sekce odvetvia-sekcia">
+  <div class="wrap dvojstlpec">
+    <div>
+      <h2>Odvetvia, v&nbsp;ktorých máme pracovné ponuky</h2>
+      <p class="odv-lead">Pomôžeme Vám vypracovať profesijný životopis, zhodnotiť doterajšie skúsenosti a poradíme, aké dokumenty potrebujete. Po prijatí pracovnej ponuky Vás pripravíme na vycestovanie.</p>
+    </div>
+    <div class="odv-pravy">
+    <ul class="odvetvia" role="list">
+      {% for o in data.obsah.odvetvia %}<li>{{ o }}</li>{% endfor %}
+      <li>a ďalšie</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="sekce firmy-sekcia" id="firmy">
+  <div class="wrap">
+    <div class="sek-hlava">
+      <h2>Služby pre firmy</h2>
+      <p>Hľadáte zamestnancov? Zabezpečíme personálny prenájom aj výber ľudí podľa Vašich požiadaviek.</p>
+    </div>
+    <ul class="firmy-riadky" role="list">
+      {% for f in data.obsah.firmy %}<li><h3>{{ f.n }}</h3><p>{{ f.p }}</p></li>{% endfor %}
+    </ul>
+    <p class="kroky-dole"><a href="{{ url('pre-firmy/') }}">Viac pre firmy</a></p>
+  </div>
+</section>
+
+<section class="sekce cta-sekcia">
+  <div class="wrap cta">
+    <h2>Napíšte nám</h2>
+    <p>Na otázky k ponukám alebo registrácii odpovieme e-mailom na <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a> alebo Vám zavolajte na <a href="tel:{{ site.kontakt.telefon|replace(' ','') }}">{{ site.kontakt.telefon }}</a>.</p>
+    <p class="cta-adresa">PERSONÁLNE SLUŽBY s. r. o., {{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}<br>Povolenie na sprostredkovanie zamestnania za úhradu (ÚPSVaR) · Mestský súd Bratislava III, ORSR Sro/167934/B</p>
+    <a class="tlacitko" href="{{ url('kontakt/') }}">Kontakt a registrácia</a>
+  </div>
+</section>
+{% endblock %}
