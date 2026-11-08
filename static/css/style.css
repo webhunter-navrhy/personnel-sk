@@ -304,3 +304,10 @@ a { text-underline-offset: 0.18em; }
 .tab-plat { white-space: nowrap; }
 .plat-r { white-space: nowrap; }
 @media (min-width: 52.01rem) { .tab-hlavicka, .tab-odkaz { grid-template-columns: 1.4fr 1.3fr 1.2fr .9fr; } }
+
+@media (max-width: 52rem) {
+  .tab-odkaz { grid-template-columns: 1fr; }
+  .tab-ciel { font-size: .85rem; color: #ffc9a3; }
+  .tab-nastup { font-size: .85rem; }
+  .tab-plat { white-space: normal; }
+}
